@@ -1,36 +1,43 @@
 # Sales Data Analyst AI Agent
 
-An AI-powered Sales Data Analyst built using **n8n, OpenAI, Google Sheets and Gmail**. This project allows users to ask sales-related questions in natural language and receive data-driven insights through an AI Agent.
+An AI-powered Sales Data Analyst built using **n8n, OpenAI, Google Sheets and Gmail**. This project enables users to interact with sales data using natural-language questions and receive meaningful, data-driven insights.
 
-## Project Preview
+---
+
+## Project Workflow
 
 ![Sales Data Analyst AI Agent Workflow](screenshots/workflow.png)
 
-*End-to-end n8n workflow showing the AI Agent, OpenAI Chat Model, Google Sheets and Gmail integration.*
+*End-to-end automation workflow built using n8n.*
+
+---
 
 ## Project Overview
 
-The Sales Data Analyst AI Agent automates sales data analysis using natural-language queries. It retrieves records from Google Sheets, processes the requested analysis and generates understandable results.
+The Sales Data Analyst AI Agent automates sales data analysis through an AI-powered workflow.
 
-The agent is designed to email analysis reports to the configured recipient through Gmail.
+Users can ask questions about sales performance, customers, products, orders and geographical trends. The AI Agent retrieves relevant records from Google Sheets, processes the requested analysis and generates understandable results.
+
+The workflow also integrates Gmail to send analysis reports through email.
 
 ## Technologies Used
 
 | Technology | Purpose |
 |---|---|
-| n8n | Workflow automation |
-| OpenAI | AI-powered analysis and natural-language understanding |
-| Google Sheets | Sales data source |
+| n8n | Workflow automation and AI Agent orchestration |
+| OpenAI | Natural-language understanding and AI reasoning |
+| Google Sheets | Sales dataset and data retrieval |
 | Gmail | Automated email reporting |
 
 ## Key Features
 
 - Natural-language interaction with sales data.
-- Customer analysis and unique customer counts.
-- City-wise and country-wise sales analysis.
-- Product-line performance analysis.
 - Total sales and average sales calculations.
-- Identification of sales trends and key findings.
+- Unique customer analysis.
+- City-wise and country-wise customer breakdowns.
+- Product-line performance analysis.
+- Sales trends and performance insights.
+- Order and deal-size analysis.
 - Automated email reporting through Gmail.
 - HTML-formatted analysis reports.
 
@@ -41,36 +48,40 @@ flowchart TD
     A["Chat Trigger"] --> B["AI Agent"]
     C["OpenAI Chat Model"] --> B
     D["Google Sheets"] --> B
-    E["Gmail Tool"] --> B
-    B --> F["Analysis in Chat"]
-    B --> G["Email Report"]
+    B --> E["Analysis in Chat"]
+    B --> F["Gmail Tool"]
+    F --> G["Email Report"]
 ```
 
 ## How It Works
 
-1. The user submits a sales-related question through the n8n chat interface.
-2. The AI Agent understands the user's request.
-3. Google Sheets provides the sales records.
-4. The AI Agent performs the requested analysis.
-5. The results are presented in the chat.
-6. The Gmail integration sends the generated report to the configured email address.
+1. **User Input:** The user submits a sales-related question through the n8n chat interface.
+2. **AI Processing:** The AI Agent interprets the user's request.
+3. **Data Retrieval:** Google Sheets provides the relevant sales records.
+4. **Data Analysis:** The AI Agent processes the retrieved data and generates the requested insights.
+5. **Chat Response:** The analysis results are presented to the user.
+6. **Email Automation:** Gmail sends the generated report to the configured recipient.
 
-## Dataset
+## Dataset Information
 
-The project uses a sales dataset containing fields such as:
+The project uses a sales dataset containing the following fields:
 
-- Order Number
-- Quantity Ordered
-- Price Each
-- Sales
-- Order Date
-- Product Line
-- Customer Name
-- City
-- Country
-- Deal Size
+- ORDERNUMBER
+- QUANTITYORDERED
+- PRICEEACH
+- SALES
+- ORDERDATE
+- STATUS
+- PRODUCTLINE
+- PRODUCTCODE
+- CUSTOMERNAME
+- CITY
+- STATE
+- COUNTRY
+- TERRITORY
+- DEALSIZE
 
-## Example Queries
+## Example Questions
 
 Users can ask questions such as:
 
@@ -80,6 +91,8 @@ Users can ask questions such as:
 - What is the average order value?
 - Which country contributes the most sales?
 - Show quarterly sales performance.
+- Which products have the highest sales?
+- What is the total quantity ordered?
 
 ## Project Structure
 
@@ -90,32 +103,42 @@ sales-data-analyst-ai-agent/
 ├── README.md
 │
 └── screenshots/
-    ├── workflow.png
-    └── email-report.png
+    └── workflow.png
 ```
 
 ## How to Import and Run
 
-1. Download the workflow JSON from this repository.
+1. Clone or download this repository.
 2. Open your n8n instance.
-3. Import the downloaded workflow.
-4. Configure your own OpenAI, Google Sheets and Gmail credentials.
-5. Connect your sales spreadsheet.
-6. Execute the workflow and ask questions through the chat interface.
+3. Import the workflow JSON file.
+4. Configure your own OpenAI credentials.
+5. Connect your Google Sheets account and select the sales dataset.
+6. Configure your Gmail credentials.
+7. Execute the workflow.
+8. Ask questions through the AI Agent chat interface.
+
+## Requirements
+
+- An active n8n instance.
+- OpenAI API access.
+- Google Sheets account with access to the sales dataset.
+- Gmail account with appropriate permissions.
 
 ## Important Notes
 
-- You must configure your own API credentials and Google account access.
-- The workflow requires access to a compatible Google Sheets sales dataset.
-- Email delivery depends on correct Gmail tool configuration.
-- Do not share credentials, API keys or private customer information.
+- Configure your own credentials before executing the workflow.
+- The workflow requires access to a compatible sales spreadsheet.
+- Email reporting depends on correct Gmail configuration and successful execution.
+- Never upload API keys, passwords, OAuth tokens or confidential customer data to a public repository.
 
 ## Author
 
 **Nilesh**
 
-GitHub: https://github.com/neill-dev
+GitHub: [neill-dev](https://github.com/neill-dev)
+
+Project Repository: [Sales Data Analyst AI Agent](https://github.com/neill-dev/sales-data-analyst-ai-agent)
 
 ---
 
-*Built as a practical project exploring AI agents, data analysis and workflow automation.*
+*Built to explore AI agents, data analysis and intelligent workflow automation using n8n.*
