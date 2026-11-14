@@ -4,14 +4,6 @@ An AI-powered Sales Data Analyst built using **n8n, OpenAI, Google Sheets and Gm
 
 ---
 
-## Project Workflow
-
-![Sales Data Analyst AI Agent Workflow](screenshots/workflow.png)
-
-*End-to-end automation workflow built using n8n.*
-
----
-
 ## Project Overview
 
 The Sales Data Analyst AI Agent automates sales data analysis through an AI-powered workflow.
@@ -19,6 +11,12 @@ The Sales Data Analyst AI Agent automates sales data analysis through an AI-powe
 Users can ask questions about sales performance, customers, products, orders and geographical trends. The AI Agent retrieves relevant records from Google Sheets, processes the requested analysis and generates understandable results.
 
 The workflow also integrates Gmail to send analysis reports through email.
+
+## Project Workflow
+
+![Sales Data Analyst AI Agent Workflow](https://raw.githubusercontent.com/neill-dev/sales-data-analyst-ai-agent/main/Screenshot%202026-11-14%20134447.png)
+
+*Complete n8n workflow showing the AI Agent and its integrations.*
 
 ## Technologies Used
 
@@ -83,8 +81,6 @@ The project uses a sales dataset containing the following fields:
 
 ## Example Questions
 
-Users can ask questions such as:
-
 - What are the total sales?
 - Which product line generates the highest revenue?
 - How many unique customers are there in each city?
@@ -100,15 +96,13 @@ Users can ask questions such as:
 sales-data-analyst-ai-agent/
 │
 ├── Sales-Data-Analyst-AI-Agent.json
-├── README.md
-│
-└── screenshots/
-    └── workflow.png
+├── Screenshot 2026-11-14 134447.png
+└── README.md
 ```
 
 ## How to Import and Run
 
-1. Clone or download this repository.
+1. Download the workflow JSON file from this repository.
 2. Open your n8n instance.
 3. Import the workflow JSON file.
 4. Configure your own OpenAI credentials.
